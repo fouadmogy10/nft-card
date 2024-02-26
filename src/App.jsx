@@ -1,4 +1,4 @@
-import "./app.scss";
+import "./App.scss";
 import img1 from "./assets/images/image-equilibrium.jpg";
 import img2 from "./assets/images/icon-view.svg";
 import img3 from "./assets/images/icon-ethereum.svg";
