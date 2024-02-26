@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+$bg-main: hsl(217, 54%, 11%);
+$bg-card: hsl(216, 50%, 16%);
+$color-blue: hsl(215, 51%, 70%);
+$color-cyan: hsl(178, 100%, 50%);
+$color-white: hsl(0, 0%, 100%);
+$line-color: hsl(215, 32%, 27%);
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Project Styles */
+body {
+  background-color: $bg-main;
+  font-family: "Outfit", sans-serif;
+  color: $color-blue;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+/* Card */
+.main-card {
+  background-color: $bg-card;
+  width: min(87.5%, 22rem);
+  margin: 9.5rem auto;
+  border-radius: 15px;
+  padding: 1.5rem 1.6rem 2rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+/* Main Image */
+.image-container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+
+  .main-image {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    background-color: $color-cyan;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .view {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    .overlay {
+      opacity: 0.5;
+      height: 100%;
+      width: 100%;
+    }
+
+    .overlay + .view {
+      opacity: 1;
+    }
+  }
+}
+
+/* Main Content */
+.title {
+  color: $color-white;
+  margin: 1.4rem 0 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  &:hover {
+    color: $color-cyan;
+    cursor: pointer;
+  }
+}
+
+.description {
+  font-size: 1.1rem;
+  letter-spacing: 0.015em;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.eth-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 1.4rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.eth {
+  color: $color-cyan;
+  font-weight: 600;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: 0.5rem;
+  }
+}
+
+/* Creator Info */
+.creator-info {
+  display: flex;
+  border-top: 1px solid $line-color;
+  padding-top: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+    justify-content: center;
+  .avatar {
+    border: 1px solid $color-white;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem !important;
+  }
+
+  .creator-text {
+    font-weight: 300;
+  }
+
+  .creator-name {
+    color: $color-white;
+    transition: all .5s ease-in-out;
+    &:hover {
+      color: $color-cyan;
+      cursor: pointer;
+    }
+  }
+}
